@@ -1,6 +1,6 @@
 // CUDA program computes squares of numbers from 0 to 99 using the GPU, then prints them on the CPU.
 
-//1 . CPU allocates GPU memory
+// 1 . CPU allocates GPU memory
 
 // 2. CPU launches GPU kernel
 
@@ -8,7 +8,7 @@
 
 // 4. CPU copies results back
 
-//5. CPU prints results
+// 5. CPU prints results
 
 #include <stdio.h>
 #include <cuda_runtime.h>  //Includes CUDA runtime API declarations: cudaMalloc cudaMemcpy cudaFree
