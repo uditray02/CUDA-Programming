@@ -5,7 +5,7 @@
 __global__ void data_race_kernel(int *out)
 {
     // MANY threads write to the SAME location
-    out[0] += 1;   // ❌ DATA RACE
+    out[0] += 1;   //  DATA RACE
 }
 
 int main()
@@ -16,7 +16,7 @@ int main()
     cudaMalloc(&d_out, sizeof(int));
     cudaMemcpy(d_out, &h_out, sizeof(int), cudaMemcpyHostToDevice);
 
-    // 🚨 MANY THREADS
+    //  MANY THREADS
     data_race_kernel<<<1, 256>>>(d_out);
     cudaDeviceSynchronize();
 
